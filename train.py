@@ -173,9 +173,9 @@ def main():
             es_counter = 0
         else:
             es_counter += 1
-            print(f"[Early Stop] {es_counter}회 성능 개선 없음 (Best G Loss: {best_loss:.4f})")
+            print(f"{es_counter}회 성능 개선 없음 (Best G Loss: {best_loss:.4f})")
             if es_counter >= patience:
-                print(f"[Early Stop] 성능 향상 없음. 조기 종료 (Epoch {epoch+1})")
+                print(f"성능 향상 없음. 조기 종료 (Epoch {epoch+1})")
                 break
 
         # Learning Rate Update
