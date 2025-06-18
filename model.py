@@ -133,16 +133,8 @@ class Discriminator(nn.Module):
         # 특징 추출
         self.main = nn.Sequential(*layers)
 
-        # 진짜/가짜 판별 헤드
+        # 진짜/가짜 판별
         self.conv_src = nn.Conv2d(cur_dim, 1, 3, 1, 1)
-
-        # 속성 분류 헤드 (RaFD)
-        self.conv_cls = nn.Conv2d(
-            cur_dim, 
-            c_dim, 
-            kernel_size=kernel_size, 
-            bias=False
-        )
 
     def forward(self, x):
         """
